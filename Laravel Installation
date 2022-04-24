@@ -1,0 +1,44 @@
+#Installation Via Composer
+If your computer already has PHP and Composer installed, you may create a new Laravel project by using Composer directly. After the application has been created, you may start Laravel's local development server using the Artisan CLI's serve command:
+
+composer create-project laravel/laravel:^8.0 example-app
+ 
+cd example-app
+ 
+php artisan serve
+
+The Laravel Installer
+Or, you may install the Laravel Installer as a global Composer dependency:
+
+composer global require laravel/installer
+ 
+laravel new example-app
+ 
+cd example-app
+ 
+php artisan serve
+
+Make sure to place Composer's system-wide vendor bin directory in your $PATH so the laravel executable can be located by your system. This directory exists in different locations based on your operating system; however, some common locations include:
+
+macOS: $HOME/.composer/vendor/bin
+Windows: %USERPROFILE%\AppData\Roaming\Composer\vendor\bin
+GNU / Linux Distributions: $HOME/.config/composer/vendor/bin or $HOME/.composer/vendor/bin
+For convenience, the Laravel installer can also create a Git repository for your new project. To indicate that you want a Git repository to be created, pass the --git flag when creating a new project:
+
+laravel new example-app --git
+
+This command will initialize a new Git repository for your project and automatically commit the base Laravel skeleton. The git flag assumes you have properly installed and configured Git. You can also use the --branch flag to set the initial branch name:
+
+laravel new example-app --git --branch="main"
+
+Instead of using the --git flag, you may also use the --github flag to create a Git repository and also create a corresponding private repository on GitHub:
+
+laravel new example-app --github
+
+The created repository will then be available at https://github.com/<your-account>/example-app. The github flag assumes you have properly installed the GitHub CLI and are authenticated with GitHub. Additionally, you should have git installed and properly configured. If needed, you can pass additional flags that are supported by the GitHub CLI:
+
+laravel new example-app --github="--public"
+
+You may use the --organization flag to create the repository under a specific GitHub organization:
+
+laravel new example-app --github="--public" --organization="laravel"
